@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const posts = useSelector((state)=> state.posts.posts)
+  const [searchQuery, setSearchQuery] = useState('');
   console.log(posts)
+
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const navigate = useNavigate()
   return (
    <div>
     <h1 className='w-[95%] mx-auto mt-5 text-2xl font-bold'>Social Media for Travellers</h1>
       <div className="flex justify-start  items-center gap-3 w-[95%] mx-auto mt-5 p-2 ps-5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-      <CiSearch /><input type="text" id="search-navbar" className='w-full outline-none'  placeholder="Search..."></input>
+      <CiSearch /><input type="text" id="search-navbar" value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}  className='w-full outline-none'  placeholder="Search..."></input>
 
       </div>    
     <div className='p-10 flex flex-wrap justify-center gap-7'>
 
-    {posts.map((post)=>(
+    {filteredPosts.map((post)=>(
       <div key={post.id} className=" relative max-w-sm h-[400px] bg-white border p-4 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
           <img className="rounded-t-lg w-full h-2/4" src={`https://picsum.photos/200?random=${post.id}`} alt="" />

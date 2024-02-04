@@ -33,7 +33,7 @@ function Navbar() {
  
         <li className='flex justify-center items-center'>
           <NavLink
-            to='/Bookmarks'
+            to='/Bookmarks/1'
             className={({isActive}) => `${ isActive ? "text-[20px]" : " text-sm"} ${ isActive ? " text-orange-600" : " text-[#ffbe9d]"}  font-semibold hover:text-gray-900`}
           >
         <FaBookmark/>
@@ -41,12 +41,12 @@ function Navbar() {
         </li>
     
         <li className='flex justify-center items-center'>
-          <NavLink
-            to='/Notify'
-            className={({isActive}) => `${ isActive ? "text-[20px]" : " text-sm"} ${ isActive ? " text-orange-600" : " text-[#ffbe9d]"}  font-semibold hover:text-gray-900`}
+          <span
+            to=''
+            className={`text-[#ffbe9d] text-[15px] font-semibold hover:text-gray-900`}
           >
         <FaUserAlt/>
-          </NavLink>
+          </span>
         </li>
       </ul>
     </div>

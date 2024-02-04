@@ -7,6 +7,7 @@ import store from './reduxStore/Store.js'
 import Home from './components/Home.jsx'
 import Bookmark from './components/Bookmark.jsx'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import Notify from './components/Notify.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   children: [
     {path:"", element: <Home/>},
     {path:"/Bookmarks/:id", element: <Bookmark/>},
+    {path:"/Notify", element: <Notify/>},
   ]
 }
 ])

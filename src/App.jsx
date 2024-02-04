@@ -1,7 +1,6 @@
 
 import './App.css'
 import Navbar from './components/navbar'
-import Home from './components/Home'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 import { fetchposts } from './Slices/PostsSlice';
