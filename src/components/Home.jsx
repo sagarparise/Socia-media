@@ -38,7 +38,7 @@ function Home() {
               
           </span>
       </div>
-      <span className=' inline-block  bg-orange-500 p-2 rounded-lg text-white shadow-md font-bold absolute bottom-7 right-7' onClick={()=> navigate(`/Bookmarks/${post.id}`)} >
+      <span className=' inline-block   bg-gradient-to-b from-orange-600 via-orange-300 p-2 rounded-lg text-white shadow-md font-bold absolute bottom-7 right-7' onClick={()=> navigate(`/Bookmarks/${post.id}`)} >
 <FaGreaterThan />
 </span>
   </div>
